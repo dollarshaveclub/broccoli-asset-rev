@@ -8,11 +8,12 @@ module.exports = {
     var defaultOptions = {
       enabled: this.app.env === 'production',
       exclude: [],
+      bypassFingerprinting: false,
       extensions: ['js', 'css', 'png', 'jpg', 'gif', 'map'],
       prepend: '',
       replaceExtensions: ['html', 'css', 'js']
-    }
-  
+    };
+
     // Allow simply setting { fingerprint: false } as a shortcut option to disable
     if (this.app.options.fingerprint === false) {
       this.options = this.app.options.fingerprint = { enabled: false };
